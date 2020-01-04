@@ -1,0 +1,64 @@
+.App {
+    text-align: center;
+    background-color:#F0FFFF;
+}
+
+.transactions{
+    background-color: gainsboro;
+
+
+}
+
+.table {
+    width: 100%;
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.column {
+    width: 33.3%;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.row{
+
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction:row;
+}
+
+.column-body {
+    width: 100%;
+    min-height: 100px;
+    background-color: #e6ecff;
+    padding-top: 20px;
+    display: none;
+}
+.column-body .item {
+    width: 100%;
+    padding: 5px;
+    border-bottom: solid 2px	#ffffff;
+}
+.column-body .item p {
+    margin-bottom: 0px;
+}
+.open {
+    display: block;
+}
+@media (max-width: 768px){
+    .table {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .column {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+
+
