@@ -35,9 +35,12 @@ class SignupForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
             email: '',
-            password: ''
+            password: '',
+            fname:'',
+            lname:'',
+            tel:'',
+            address:''
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -71,16 +74,37 @@ class SignupForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className="form-item">
-                    <input type="text" name="name" 
-                        className="form-control" placeholder="Name"
-                        value={this.state.name} onChange={this.handleInputChange} required/>
+                    <p>First name</p>
+                    <input type="text" name="fname"
+                           className="form-control" placeholder="FirstName"
+                           value={this.state.fname} onChange={this.handleInputChange} required/>
                 </div>
                 <div className="form-item">
+                    <p>Last name</p>
+                    <input type="text" name="lname"
+                           className="form-control" placeholder="LastName"
+                           value={this.state.lname} onChange={this.handleInputChange} required/>
+                </div>
+                <div className="form-item">
+                    <p>Phone number</p>
+                    <input type="text" name="tel"
+                           className="form-control" placeholder="PhoneNumber"
+                           value={this.state.tel} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-item">
+                    <p>Address</p>
+                    <input type="text" name="address"
+                           className="form-control" placeholder="Address"
+                           value={this.state.address} onChange={this.handleInputChange} />
+                </div>
+                <div className="form-item">
+                    <p>Email</p>
                     <input type="email" name="email" 
                         className="form-control" placeholder="Email"
                         value={this.state.email} onChange={this.handleInputChange} required/>
                 </div>
                 <div className="form-item">
+                    <p>Password</p>
                     <input type="password" name="password" 
                         className="form-control" placeholder="Password"
                         value={this.state.password} onChange={this.handleInputChange} required/>

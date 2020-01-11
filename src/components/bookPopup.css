@@ -1,0 +1,31 @@
+.popup {
+    /*position: fixed;*/
+    position:relative;
+    float:right;
+
+    margin-right:3% !important;
+    margin-top:0!important;
+    display:flex;
+    width: 25%;
+    height: 50%;
+    border-radius:2px;
+    color:white;
+
+    margin: auto;
+    background-color: rgba(0,0,0, 0.7);
+}
+.popup\_inner {
+    position: relative;
+    float:right;
+
+    border-radius: 20px;
+    background: white;
+}
+.closeButton{
+   display:block;
+   float:right;
+    margin-right:2px;
+    color:white;
+    font-weight: bold;
+
+}

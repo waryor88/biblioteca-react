@@ -10,9 +10,12 @@ class Books extends React.Component {
         this.state = {
             books: [],
             delimitator: "",
-            criteria: "",
+            criteria: "author",
             query: "",
-            bookId: ""
+            bookId: "",
+            book: "",
+            dataBooks: ""
+
         }
     }
 
@@ -22,7 +25,7 @@ class Books extends React.Component {
                 Authorization: 'Bearer ' + localStorage.getItem('accessToken')
             }
         })
-            .then(response => this.setState({books: response.data}))
+            .then(response => this.setState({books: response.data,query:""}))
 
     }
 
@@ -36,8 +39,36 @@ class Books extends React.Component {
             .then(response => this.setState({books: response.data}))
     }
 
+    setBook = () => {
+        this.setState({book: localStorage.getItem('bookId')}
+        )
+    }
+    setData = () => {
+        this.setState({
+            dataBooks: JSON.stringify({
+                loanBooks: [
+                    this.state.book
+                ]
+            })
+        })
+    }
+
+
+    loanTheBook = () => {
+        axios.post('http://localhost:8080/loan', this.state.dataBooks
+            , {
+                headers: {
+                    Authorization: 'Bearer ' + localStorage.getItem('accessToken'),
+                    'Content-Type': 'application/json',
+                }
+            }
+        )
+
+    }
+
     componentDidMount() {
         this.getResult()
+
     }
 
     render() {
@@ -54,9 +85,14 @@ class Books extends React.Component {
                         <option value="year">Year</option>
                     </select>
 
-                    <button className="button-class" onClick={this.getBook}>Search</button>
+                    <button className="button-class" onClick={() => {
+                        this.getBook()
+                    }}>Search
+                    </button>
                 </div>
-                <table className="cinereousTable">
+                <table onMouseOver={() => {
+                    this.setBook()
+                }} className="cinereousTable">
                     <thead>
                     <tr>
                         <th>Title</th>
@@ -82,9 +118,31 @@ class Books extends React.Component {
                                 }
                             }
                         )}</td>
-                        <td>
+                        <td onMouseOver={() => {
+                            {
+                                localStorage.setItem("bookId", item.externalId)
+                            }
+                            ;
+                            {
+                                this.setData()
+                            }
+                        }}>
                             <button className="table-button"
-                                    onClick={() => localStorage.setItem("bookId", item.externalId)}>Loan this book
+                                    onClick={async () => {
+                                        {
+                                            {
+                                                this.setData()
+                                            }
+                                            ;
+                                            {
+                                                this.loanTheBook()
+                                            }
+                                            ;
+                                            {await this.getBook()}
+                                            ;
+                                            {alert("Book succesfully loaned !")}
+                                        }
+                                    }}>Loan this book
                             </button>
                         </td>
                     </tr>)
