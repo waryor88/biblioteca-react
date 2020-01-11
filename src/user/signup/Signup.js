@@ -17,10 +17,8 @@ class Signup extends Component {
         return (
             <div className="signup-container">
                 <div className="signup-content">
-                    <h1 className="signup-title">Signup with SpringSocial</h1>
-                    <div className="or-separator">`
-                        <span className="or-text">OR</span>
-                    </div>
+                    <h1 className="signup-title">Signup before using library app</h1>
+
                     <SignupForm {...this.props} />
                     <span className="login-link">Already have an account? <Link to="/login">Login!</Link></span>
                 </div>
