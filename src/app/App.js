@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom';
 import AppHeader from '../common/AppHeader';
 import Books from '../components/Books.jsx';
+import Admin from '../components/AdminComponent'
 import Home from '../home/Home';
 import Loans from '../components/Loans';
 import Login from '../user/login/Login';
@@ -87,6 +88,11 @@ class App extends Component {
                         <PrivateRoute path="/profile" authenticated={this.state.authenticated}
                                       currentUser={this.state.currentUser}
                                       component={Profile}></PrivateRoute>
+                        <PrivateRoute path="/admin" authenticated={this.state.authenticated}
+                                      currentUser={this.state.currentUser}
+                                      component={Admin}></PrivateRoute>
+
+
                         <Route path="/login"
                                render={(props) => <Login
                                    authenticated={this.state.authenticated} {...props} />}></Route>

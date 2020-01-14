@@ -1,5 +1,18 @@
 .profile-container {
-    padding-top: 30px;
+ display:block;
+    max-width:35%;
+    margin-top:100px !important;
+    margin-left:0;
+    margin-right:0;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 1.7em;
+    flex-direction: column;
+    justify-content: center;
+    background: #46b5e5;
+    background: linear-gradient(45deg, #e58826 1%, #e59500 64%, #f5d58a 97%);
+    background-image: -ms-linear-gradient(45deg,#e58826 1%,#e59500 64%,#f5d58a 97%);
+   color:white;
 }
 
 .profile-info {
@@ -40,4 +53,11 @@
     line-height: 200px;
     color: #fff;
     font-size: 3em;
+}
+@media screen and (max-width: 600px) {
+    .profile-container{
+      max-width:100%;
+        margin-top:100px !important;
+    }
+
 }

@@ -33,10 +33,8 @@ class Login extends Component {
         return (
             <div styles={{ backgroundImage:`url(${books})` }} className="login-container">
                 <div className="login-content">
-                    <h1 className="login-title">Login</h1>
-                    <div className="or-separator">
-                        <span className="or-text">into bank</span>
-                    </div>
+                    <h1 className="login-title">Welcome</h1>
+                    <h3>Enter creditentials</h3>
                     <LoginForm {...this.props} />
                     <span className="signup-link">New user? <Link to="/signup">Sign up!</Link></span>
                 </div>
@@ -102,7 +100,7 @@ class LoginForm extends Component {
                         value={this.state.password} onChange={this.handleInputChange} required/>
                 </div>
                 <div className="form-item">
-                    <button type="submit" className="btn btn-block btn-primary">Login</button>
+                    <button type="submit" className="btn btn-block btn-primary loginButton">Login</button>
                 </div>
             </form>
         );

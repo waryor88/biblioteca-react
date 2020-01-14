@@ -14,6 +14,9 @@
     position: relative;
     padding: 35px;
 }
+.loginButton{
+    background-color: #AD6A34;
+}
 
 .social-btn {
     margin-bottom: 15px;

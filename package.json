@@ -19,6 +19,7 @@
     "mdbreact": "^4.24.0",
     "prop-types": "latest",
     "react": "^16.5.2",
+    "react-confirm-alert": "^2.4.1",
     "react-dom": "^16.5.2",
     "react-popupbox": "^2.0.8",
     "react-router-dom": "^4.3.1",

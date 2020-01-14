@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
 import './Profile.css';
-import Accounts from './Accounts';
 class Profile extends Component {
     constructor(props) {
         super(props);
-        console.log(props);
+
     }
     render() {
         return (
 
             <div className="profile-container">
-                <h1>{this.props.currentUser.name.toUpperCase()+'s'+' accounts'}</h1>
                 <div className="container">
                     <div className="profile-info">
-
-                       <Accounts/>
-
+                        <p>User details</p>
+                        <p>User id: {this.props.currentUser.reader.externalId.toUpperCase()}</p>
+                        <p>First name: {this.props.currentUser.reader.fname.toUpperCase()}</p>
+                        <p>Last name: {this.props.currentUser.reader.lname.toUpperCase()}</p>
+                        <p>Phone number: {this.props.currentUser.reader.tel.toUpperCase()}</p>
+                        <p>Address: {this.props.currentUser.reader.address.toUpperCase()}</p>
+                        <p>Email: {this.props.currentUser.reader.email.toUpperCase()}</p>
                     </div>
                 </div>
 

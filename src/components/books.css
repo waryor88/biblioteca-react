@@ -48,7 +48,7 @@ table.cinereousTable tfoot td {
 }
 
 .booksContainer {
-    display: flex;
+
     max-width: 100%;
     justify-content: center;
     flex-direction: column;

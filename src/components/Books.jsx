@@ -77,7 +77,6 @@ class Books extends React.Component {
                 <div className="rowContainer">
                     <input onChange={(e) => this.setState({query: e.target.value})} type="text"
                            placeholder="Search book by"></input>
-
                     <select className="select-style" onChange={(e) => this.setState({criteria: e.target.value})}>
                         <option value="author">Author</option>
                         <option value="title">Title</option>

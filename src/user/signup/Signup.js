@@ -38,7 +38,8 @@ class SignupForm extends Component {
             fname:'',
             lname:'',
             tel:'',
-            address:''
+            address:'',
+            adminKey:''
         }
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -71,6 +72,12 @@ class SignupForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
+                <div className="form-item">
+                    <p>Admin key</p>
+                    <input type="text" name="adminKey"
+                           className="form-control" placeholder="AdminKey"
+                           value={this.state.adminKey} onChange={this.handleInputChange}/>
+                </div>
                 <div className="form-item">
                     <p>First name</p>
                     <input type="text" name="fname"
